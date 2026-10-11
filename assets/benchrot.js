@@ -1169,7 +1169,7 @@ function applyAnims(A, lt, k){
       case 'rise': s.opacity=p; s.transform='translateY('+r1((1-EASE.out(p))*10*k)+'px)'; break;
       case 'growY': s.transform='scaleY('+EASE.out(p)+')'; s.transformOrigin='50% 100%'; s.transformBox='fill-box'; break;
       case 'growX': s.transform='scaleX('+EASE.out(p)+')'; s.transformOrigin='0 50%'; s.transformBox='fill-box'; break;
-      case 'pop': s.transform='scale('+(.4+.6*EASE.back(p))+')'; s.transformOrigin='50% 50%'; s.transformBox='fill-box'; if(p===0) s.opacity=0; else if(!a.el.classList.contains('rv')&&!a.el.closest('.rv')) s.opacity=Math.min(1,p*3); break;
+      case 'pop': s.transform='scale('+(.4+.6*EASE.back(p))+')'; s.transformOrigin='50% 50%'; s.transformBox='fill-box'; if(!a.el.classList.contains('rv')) s.opacity=Math.min(1,p*3); break;
       case 'draw': s.strokeDashoffset=1-EASE.inout(p); s.strokeDasharray='1'; break;
       case 'count': a.el.textContent=Math.round(a.v*EASE.out(p)); break;
       case 'radar': s.opacity=p>0?1:0; setRadar(a.el, radarGrow(a.vals,p)); break;
