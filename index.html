@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>大模型 Beachrot 排行榜 · LLM Beachrot Leaderboard</title>
-<meta name="description" content="Beachrot 综合指数：16 个前沿大模型在版本号、命名、母公司架构与定价效率上的独立评估。B站 @史诗级猫头嘤 原创基准测试。">
+<title>LLM Beachrot Leaderboard · 大模型 Beachrot 排行榜</title>
+<meta name="description" content="The Beachrot Index: an independent evaluation of 16 frontier LLMs from 7 labs across versioning, nomenclature, corporate structure and pricing efficiency. An original benchmark by @史诗级猫头嘤 on Bilibili.">
 <meta name="theme-color" content="#ffffff">
 <style>
 :root{
@@ -467,27 +467,27 @@ var HIST = {
 /* ============ i18n ============ */
 var T = {
   title:['大模型 Beachrot 排行榜','LLM Beachrot Leaderboard'],
-  sig:['B站 @史诗级猫头嘤 原创基准测试','Original benchmark by @史诗级猫头嘤 on Bilibili'],
+  sig:['B站 @史诗级猫头嘤 原创基准测试','An original benchmark by @史诗级猫头嘤 on Bilibili'],
   heroEb:['Beachrot Index · 第 1 期 · 2026 年 10 月','Beachrot Index · Edition 1 · October 2026'],
   lede:['独立评估 7 家厂商的 16 个前沿模型在版本号、命名、母公司架构与定价效率上的表现。六项指标，一个综合指数。','An independent evaluation of 16 frontier models from 7 labs across versioning, nomenclature, corporate structure and pricing efficiency. Six metrics, one composite index.'],
   asof:['数据截至 2026 年 10 月 11 日','Data as of October 11, 2026'],
   nIndex:['综合指数','Index'], nMetrics:['单项指标','Metrics'], nFrontier:['版本号与价格','Version vs Price'], nInfl:['版本通胀','Inflation'], nRadar:['模型画像','Profiles'], nModels:['模型','Models'], nMethod:['方法论','Methodology'],
   video:['视频模式','Video mode'], langBtn:['EN','中文'],
   indexTitle:['Beachrot 综合指数','Beachrot Index'],
-  indexSub:['六项指标百分位名次的等权平均，0–100','Equal-weighted mean of percentile ranks across six metrics, 0–100'],
+  indexSub:['六项指标百分位名次的等权平均，0–100','Equal-weighted mean of percentile ranks across six metrics (0–100)'],
   higher:['越高越好','Higher is better'],
   champLab:['Beachrot 综合指数 · 第 1 名','Beachrot Index · Rank 1'],
   of100:['/ 100','/ 100'],
   sotf:['State of the fart','State of the fart'],
   verdictT:['总榜结论','Verdict'],
-  heatT:['指数构成','Index composition'],
+  heatT:['指数构成','Index Composition'],
   heatSub:['各模型在六项指标上的百分位名次（0–100），按综合指数排序','Percentile rank of each model on the six metrics (0–100), sorted by index'],
   idxCol:['指数','Index'],
   metricsH2:['单项指标','Individual metrics'],
-  metricsLede:['六项计入综合指数的核心指标，以及两项参考指标。所有数值均由公开信息直接计算。','The six metrics that make up the index, plus two reference metrics. Every value is computed directly from public information.'],
+  metricsLede:['六项计入综合指数的核心指标，以及两项参考指标。所有数值均由公开信息直接计算。','The six metrics that make up the index, plus two reference metrics. All values are computed directly from public information.'],
   inIndex:['计入指数','In index'], refOnly:['参考指标','Reference'],
   frontierH2:['版本号 vs 价格','Version vs Price'],
-  frontierLede:['在相同价格下获得更高版本号，是衡量模型经济性的首要标准。','Getting a higher version number for the same price is the primary test of a model’s economics.'],
+  frontierLede:['在相同价格下获得更高版本号，是衡量模型经济性的首要标准。','A higher version number at the same price is the primary test of a model’s economics.'],
   scatterT:['版本号 vs 价格','Version Number vs Price'],
   scatterSub:['USD / 百万 tokens，对数刻度；混合价格按输入:输出 = 3:1 加权','USD per 1M tokens, log scale; blended price weights input:output at 3:1'],
   pBl:['混合','Blended'], pIn:['输入','Input'], pOut:['输出','Output'],
@@ -495,17 +495,17 @@ var T = {
   xPrice:['价格（USD / 1M tokens）','Price (USD / 1M tokens)'], yVer:['版本号','Version'],
   inflH2:['版本号通胀','Version inflation'],
   inflLede:['自 2022 年底以来，各系列最高版本号持续上行。近 12 个月行业整体通胀有所放缓，但分化加剧。','Top version numbers have risen steadily since late 2022. Industry-wide inflation has cooled over the past 12 months, while dispersion has widened.'],
-  trendT:['各系列最高版本号','Highest version number by series'],
-  trendSub:['阶梯线为已正式发布的最高版本号，2022 年 11 月至今','Step lines show the highest released version, November 2022 to date'],
-  yoyT:['全行业年度版本通胀率','Industry annual version inflation'],
-  yoySub:['各系列最高版本号同比增幅的均值，截至每年 10 月 11 日','Mean year-over-year growth of each series’ top version, as of October 11 each year'],
-  serT:['各系列版本通胀率','Version inflation by series'],
-  serSub:['最高版本号同比增幅，2025-10-11 → 2026-10-11','Year-over-year growth of the top version, 2025-10-11 → 2026-10-11'],
+  trendT:['各系列最高版本号','Highest Version Number by Series'],
+  trendSub:['阶梯线为已正式发布的最高版本号，2022 年 11 月至今','Highest released version in each series, November 2022 to date'],
+  yoyT:['全行业年度版本通胀率','Industry Annual Version Inflation'],
+  yoySub:['各系列最高版本号同比增幅的均值，截至每年 10 月 11 日','Mean year-over-year growth in each series’ top version, measured on October 11'],
+  serT:['各系列版本通胀率','Version Inflation by Series'],
+  serSub:['最高版本号同比增幅，2025-10-11 → 2026-10-11','Year-over-year growth in the top version, Oct 11, 2025 → Oct 11, 2026'],
   radarH2:['模型画像','Model profiles'],
   radarLede:['每个模型在六项指标上的百分位名次。面积越大，综合表现越均衡。','Each model’s percentile rank on the six metrics. A larger area indicates a more balanced profile.'],
   modelsH2:['模型一览','Models'],
   modelsLede:['公司、系列与母公司分列。价格为各厂商公布的标准 API 列表价，单位 USD / 百万 tokens。','Company, series and parent listed separately. Prices are standard API list prices published by each provider, in USD per 1M tokens.'],
-  vRank:['名次','Rank'], blPrice:['混合价格','Blended price'], thRank:['#','#'], thModel:['模型','Model'], thCo:['公司','Company'], thSeries:['系列','Series'], thParent:['母公司','Parent'], thDate:['发布日期','Released'], thIn:['输入','Input'], thOut:['输出','Output'], thBl:['混合','Blended'], thIdx:['指数','Index'],
+  vRank:['名次','Rank'], blPrice:['混合价格','Blended price'], thRank:['#','#'], thModel:['模型','Model'], thCo:['公司','Company'], thSeries:['系列','Series'], thParent:['母公司','Parent company'], thDate:['发布日期','Released'], thIn:['输入','Input'], thOut:['输出','Output'], thBl:['混合','Blended'], thIdx:['指数','Index'],
   n100k:['≤100K 上下文档位','≤100K context tier'],
   nArgon:['受限预览，首发价','Limited preview, introductory price'],
   nPromo:['促销价，有效期至 2026-12-31','Promotional rate through 2026-12-31'],
@@ -514,7 +514,7 @@ var T = {
   methodH2:['方法论','Methodology'],
   foot:['Beachrot Index · 第 1 期 · 数据截至 2026-10-11','Beachrot Index · Edition 1 · Data as of 2026-10-11'],
   models:['个模型','models'], vendors:['家厂商','labs'], metrics6:['项指标','metrics'],
-  fVer:['最高版本号','Highest version'], fLen:['最长模型名称','Longest model name'], fVir:['最高版本通胀率','Highest version inflation'], fVpd:['最高每美元版本号','Most version per dollar'],
+  fVer:['最高版本号','Highest version'], fLen:['最长模型名称','Longest model name'], fVir:['最高版本通胀率','Highest version inflation'], fVpd:['最高每美元版本号','Highest version per dollar'],
   chars:['字符','chars'], seriesSuffix:[' 系列',' series'], andN:[' 等 {n} 个模型',' + {n} more'],
   vEbIndex:['综合指数','Composite index'], vEbMetric:['单项指标','Metric'], vEbFrontier:['版本号 vs 价格','Version vs Price'], vEbInfl:['版本通胀','Inflation'], vEbRadar:['模型画像','Profiles'], vEbVerdict:['总榜结论','Verdict'],
   vTitleSub:['16 个前沿模型 · 7 家厂商 · 6 项指标 · 1 个综合指数','16 frontier models · 7 labs · 6 metrics · 1 composite index'],
@@ -543,8 +543,9 @@ var IDX = METRICS.filter(function(m){return m.idx;});
 var MET = {}; METRICS.forEach(function(m){MET[m.k]=m;});
 
 /* ============ state & helpers ============ */
-var LANG = 'zh';
-try{ var sl = localStorage.getItem('beachrot-lang'); if(sl==='zh'||sl==='en') LANG = sl; else if(!/^zh/i.test(navigator.language||'')) LANG='en'; }catch(e){}
+// English by default; a viewer's own toggle choice is remembered
+var LANG = 'en';
+try{ var sl = localStorage.getItem('beachrot-lang'); if(sl==='zh'||sl==='en') LANG = sl; }catch(e){}
 function L(x){ return Array.isArray(x) ? x[LANG==='zh'?0:1] : x; }
 function t(k){ return L(T[k]); }
 function esc(s){ return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];}); }

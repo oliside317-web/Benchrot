@@ -1,21 +1,23 @@
 # Benchrot
 
-大模型 Beachrot 排行榜 · LLM Beachrot Leaderboard — B站 @史诗级猫头嘤 原创基准测试。
+**LLM Beachrot Leaderboard** · 大模型 Beachrot 排行榜 — an original benchmark by @史诗级猫头嘤 on Bilibili.
 
-单文件站点：`index.html`（原生 JS + 手写 SVG，无外部依赖，Logo 已内嵌）。直接用浏览器打开即可。
+Single self-contained page: `index.html` (vanilla JS + hand-written SVG, logos inlined, no external requests). Open it in any browser. English by default; the `中文` button switches language and the choice is remembered.
 
-## 视频模式
+Labs covered (matching the icons in `logos/`): OpenAI, Anthropic, Google, xAI, DeepSeek, Alibaba (Qwen), Moonshot AI (Kimi).
 
-点右上角「视频模式」，或直接打开 `index.html?video=1&ar=16x9`（`ar` 可选 `16x9` / `9x16` / `1x1`）。
+## Video mode
 
-| 按键 | 作用 |
+Click **Video mode** (top right), or open `index.html?video=1&ar=16x9` (`ar`: `16x9`, `9x16`, `1x1`).
+
+| Key | Action |
 | --- | --- |
-| 空格 | 播放 / 暂停 |
-| ← / → | 上一页 / 下一页 |
-| A | 切换画幅 |
-| M | 音效开关 |
-| H | 隐藏 / 显示控制栏（也可点画面） |
-| F | 全屏 |
-| Esc | 退出（手机上点控制栏 ×，或系统返回） |
+| Space | Play / pause |
+| ← / → | Previous / next slide |
+| A | Cycle aspect ratio |
+| M | Sound on / off |
+| H | Hide / show controls (or tap the frame) |
+| F | Fullscreen |
+| Esc | Exit (on phones: the × button or the system back gesture) |
 
-数据截至 2026-10-11，模型与价格表在 `index.html` 的 `MODELS` / `HIST` 中维护，所有指标与指数在页面加载时实时计算。
+Data as of 2026-10-11. Models, prices and version history live in the `MODELS` and `HIST` tables in `index.html`; every metric and the index are computed on page load.
