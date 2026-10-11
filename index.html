@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>LLM Benchrot Leaderboard · 大模型 Benchrot 排行榜</title>
+<meta name="description" content="The Benchrot Index: an independent evaluation of 16 frontier LLMs from 7 labs across versioning, nomenclature, corporate structure and pricing efficiency. An original benchmark by @史诗级猫头嘤 on Bilibili.">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="assets/benchrot.css">
+</head>
+<body>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" aria-label="Benchrot">
+      <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><rect x="2" y="11" width="4" height="9" fill="#141413"/><rect x="9" y="6" width="4" height="14" fill="#141413"/><rect x="16" y="2" width="4" height="18" fill="#d97757"/></svg>
+      <span>Benchrot</span>
+    </a>
+    <nav class="links">
+      <a href="#index" data-t="nIndex"></a>
+      <a href="#metrics" data-t="nMetrics"></a>
+      <a href="#frontier" data-t="nFrontier"></a>
+      <a href="#inflation" data-t="nInfl"></a>
+      <a href="#profiles" data-t="nRadar"></a>
+      <a href="#models" data-t="nModels"></a>
+      <a href="#method" data-t="nMethod"></a>
+    </nav>
+    <div class="nav-r">
+      <button class="btn-ghost" id="langBtn" type="button"></button>
+      <button class="btn-pri" id="vmBtn" type="button"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3.5 2.2v9.6L11.6 7z" fill="currentColor"/></svg><span data-t="video"></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" id="index">
+    <div class="wrap">
+      <div class="hero-top">
+        <div>
+          <div class="eyebrow" data-t="heroEb"></div>
+          <h1></h1>
+          <p class="lede" data-t="lede"></p>
+          <div class="byline"><span class="sig" data-t="sig"></span><span class="dot">·</span><span data-t="asof"></span></div>
+        </div>
+        <div class="card champ" id="champ"></div>
+      </div>
+      <div class="card" style="margin-top:20px">
+        <div class="card-h"><div><h3 data-t="indexTitle"></h3><p data-t="indexSub"></p></div><span class="wm wm-slot"></span></div>
+        <div class="chart" data-chart="index"></div>
+      </div>
+      <div class="tiles" id="tiles"></div>
+    </div>
+  </section>
+
+  <section class="sec" id="verdict-sec">
+    <div class="wrap">
+      <div class="sec-h"><div class="no">01</div><h2 data-t="verdictT"></h2></div>
+      <p class="verdict" id="verdict"></p>
+      <div class="card">
+        <div class="card-h"><div><h3 data-t="heatT"></h3><p data-t="heatSub"></p></div></div>
+        <div class="scroll-x" id="heat"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="metrics">
+    <div class="wrap">
+      <div class="sec-h"><div class="no">02</div><h2 data-t="metricsH2"></h2><p data-t="metricsLede"></p></div>
+      <div class="stack" id="metricCards"></div>
+    </div>
+  </section>
+
+  <section class="sec" id="frontier">
+    <div class="wrap">
+      <div class="sec-h"><div class="no">03</div><h2 data-t="frontierH2"></h2><p data-t="frontierLede"></p></div>
+      <div class="card">
+        <div class="card-h"><div><h3 data-t="scatterT"></h3><p data-t="scatterSub"></p></div><span class="wm wm-slot"></span></div>
+        <div class="card-h" style="align-items:center;margin:0">
+          <div class="legend" id="scatterLegend"></div>
+          <div class="seg" id="priceSeg"><button type="button" data-p="bl" class="on" data-t="pBl"></button><button type="button" data-p="pin" data-t="pIn"></button><button type="button" data-p="pout" data-t="pOut"></button></div>
+        </div>
+        <div class="chart" data-chart="scatter"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="inflation">
+    <div class="wrap">
+      <div class="sec-h"><div class="no">04</div><h2 data-t="inflH2"></h2><p data-t="inflLede"></p></div>
+      <div class="stack">
+        <div class="card">
+          <div class="card-h"><div><h3 data-t="trendT"></h3><p data-t="trendSub"></p></div><span class="wm wm-slot"></span></div>
+          <div class="legend" id="trendLegend"></div>
+          <div class="chart" data-chart="trend"></div>
+        </div>
+        <div class="grid2">
+          <div class="card">
+            <div class="card-h"><div><h3 data-t="serT"></h3><p data-t="serSub"></p></div></div>
+            <div class="chart" data-chart="series"></div>
+          </div>
+          <div class="card">
+            <div class="card-h"><div><h3 data-t="yoyT"></h3><p data-t="yoySub"></p></div></div>
+            <div class="chart" data-chart="yoy"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="profiles">
+    <div class="wrap">
+      <div class="sec-h"><div class="no">05</div><h2 data-t="radarH2"></h2><p data-t="radarLede"></p></div>
+      <div class="radars" id="radars"></div>
+    </div>
+  </section>
+
+  <section class="sec" id="models">
+    <div class="wrap">
+      <div class="sec-h"><div class="no">06</div><h2 data-t="modelsH2"></h2><p data-t="modelsLede"></p></div>
+      <div class="card">
+        <div class="scroll-x"><table class="mt" id="mt"></table></div>
+        <ul class="notes" id="notes"></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="method">
+    <div class="wrap">
+      <div class="sec-h"><div class="no">07</div><h2 data-t="methodH2"></h2></div>
+      <div class="method" id="methodBody"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span><b data-t="sig"></b></span>
+    <span data-t="foot"></span>
+  </div>
+</footer>
+
+<div id="tip" role="tooltip"></div>
+
+<div class="pm" id="pm" aria-hidden="true">
+  <div class="pm-back" data-close></div>
+  <div class="pm-card" role="dialog" aria-modal="true" aria-labelledby="pmName">
+    <div class="pm-h">
+      <i class="lg" id="pmLogo"></i>
+      <div class="t"><div class="eb" id="pmEb"></div><h3 id="pmName"></h3></div>
+      <button class="x" type="button" data-close aria-label="Close"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 3l10 10M13 3L3 13"/></svg></button>
+    </div>
+    <div class="pm-b">
+      <div class="pm-radar" id="pmRadar"></div>
+      <div>
+        <div class="pm-score"><b id="pmScore">0</b><span id="pmOf"></span><span class="sotf" id="pmTag" hidden><i></i>State of the fart</span></div>
+        <div class="pm-rows" id="pmRows"></div>
+        <dl class="pm-facts" id="pmFacts"></dl>
+      </div>
+    </div>
+    <div class="pm-f">
+      <span class="cnt" id="pmCnt"></span>
+      <div class="nav2">
+        <button type="button" id="pmPrev"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 3L4.5 7l4 4"/></svg><span data-t="prev"></span></button>
+        <button type="button" id="pmNext"><span data-t="next"></span><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 3l4 4-4 4"/></svg></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="vm" aria-hidden="true">
+  <div id="stage"></div>
+  <div id="vbar">
+    <div class="prog"><i id="vprog"></i></div>
+    <button type="button" id="vPrev" aria-label="Previous"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <button type="button" id="vPlay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" id="vPlayIc"></svg></button>
+    <button type="button" id="vNext" aria-label="Next"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+    <span class="cnt" id="vCnt">1 / 1</span>
+    <span class="sep"></span>
+    <button type="button" class="ar" id="vAr" aria-label="Aspect ratio">16:9</button>
+    <button type="button" id="vMus" aria-label="Music"><svg viewBox="0 0 24 24"><path d="M9 18V6l11-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></svg></button>
+    <button type="button" id="vSnd" aria-label="Sound effects"><svg viewBox="0 0 24 24" id="vSndIc"></svg></button>
+    <button type="button" class="fsb" id="vFs" aria-label="Fullscreen"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
+    <button type="button" id="vHide" aria-label="Hide controls"><svg viewBox="0 0 24 24"><path d="M3 3l18 18M10.6 6.1A9.9 9.9 0 0 1 12 6c5 0 8.5 4 9.5 6-.4.9-1.2 2-2.3 3.1M6.4 7.6C4.5 8.9 3.1 10.6 2.5 12c1 2 4.5 6 9.5 6 1.6 0 3-.4 4.3-1M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg></button>
+    <button type="button" id="vExit" aria-label="Exit"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+</div>
+
+<audio id="bgm" preload="none"><source src="1385b5d9c5851e3ac757295ef4d5d4ec.m4a" type="audio/mp4"><source src="assets/bgm.mp3" type="audio/mpeg"></audio>
+<script src="assets/logos.js"></script>
+<script src="assets/benchrot.js"></script>
+</body>
+</html>
